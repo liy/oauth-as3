@@ -8,7 +8,6 @@ package org.iotashan.oauth
 		private var _key:String;
 		private var _secret:String;
 		
-		
 		/**
 		 * Constructor class.
 		 * 
