@@ -1,9 +1,6 @@
 package org.iotashan.oauth
 {
 	import flash.net.URLRequestHeader;
-	import flash.net.URLVariables;
-	
-	import mx.utils.UIDUtil;
 	
 	import org.iotashan.utils.URLEncoding;
 
@@ -122,7 +119,7 @@ package org.iotashan.oauth
 		*/
 		public function buildRequest(signatureMethod:IOAuthSignatureMethod,resultType:String=RESULT_TYPE_URL_STRING,headerRealm:String=""):* {
 			var curDate:Date = new Date();
-			var uuid:String = UIDUtil.getUID(curDate);
+			var uuid:String = String(Math.floor(Number(String(curDate.time).substring(0, 10)) * Math.random()))
 
 			// first, let's add the oauth required params
 			_requestParams["oauth_nonce"] = uuid;
